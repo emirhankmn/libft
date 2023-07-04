@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 18:03:39 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/04 18:31:40 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/04 18:03:49 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/04 20:46:16 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include <string.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+size_t	ft_strlcopy(char *dst, const char *src, size_t len)
 {
-	size_t	i;
+	size_t	a;
 
-	if(dst == NULL && src == NULL)
-		return(0);
-
-	i = 0;
-	while(i < n)
+	a = 0;
+	if (len > 0)
 	{
-		((unsigned char *)dst) [i] = ((unsigned char *)src) [i];
-		i++;
+		while(src[a] && a < (len - 1))
+		{
+			dst[a] = src[a];
+			a++;
+		}
 	}
-	return(dst);
+	while(src[a])
+	{
+		a++;
+	}
+	return(a);
+	
 }
 
- int	main()
+int	main()
 {
-	char a[] = "Sabahların";
-	char b[] = "Anlamı";
+	char	a[] = "hakkında";
+	char	b[] = "duymak";
 
-	printf("%s\n", a);
-	printf("%s", ft_memcpy(a, b, 5));
-} 
+	printf("%zu", ft_strlcopy(a, b, 3));
+}

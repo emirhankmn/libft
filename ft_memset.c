@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 13:33:31 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/04 16:24:07 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/05 15:42:26 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void *ft_memset(void *b, int c, size_t len)
 	return(b);
 }
 
- /* int main()
+/* int main()
 {
 	char c[] = "Bursa";
 	char i = 't';

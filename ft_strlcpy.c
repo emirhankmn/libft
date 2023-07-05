@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:03:49 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/04 20:46:16 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/05 11:56:51 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ size_t	ft_strlcopy(char *dst, const char *src, size_t len)
 			dst[a] = src[a];
 			a++;
 		}
+		dst[a] = '\0';
 	}
-	while(src[a])
-	{
-		a++;
-	}
-	return(a);
+	printf("%s, %s", dst, src);
+	return(ft_strlen(dst));
 	
 }
 
-int	main()
+/* int	main()
 {
-	char	a[] = "hakkında";
+	char	a[] = "hakkinda";
 	char	b[] = "duymak";
 
-	printf("%zu", ft_strlcopy(a, b, 3));
-}
+	printf("%zu\n", ft_strlcopy(a, b, 6));
+	printf("%s, %s", a, b);
+
+} */

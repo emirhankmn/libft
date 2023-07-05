@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 19:49:11 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/05 20:00:23 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/05 19:48:50 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/05 20:16:33 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	s_len;
+	size_t	i;
 
-	s_len = ft_strlen(str);
-	while(s_len >= 0)
+	i = 0;
+	while(i < n)
 	{
-		if(*str == (char)c)
-			return((char *)str);
-		str++;
-		s_len--;
+		if(((unsigned char *)s)[i] == (unsigned char)c)
+			return((void *)(s + i));
+		i++;
 	}
-	return(NULL);
+	return(0);
 }
 
-int main()
+/* int	main(void)
 {
-	const char a[] = "Denizde";
+	char	a[] = "korkuyorum";
 
-	printf("%s", ft_strchr(a, 'n'));
-} 
+	printf("%s", ft_memchr(a, 'u', 5));
+} */

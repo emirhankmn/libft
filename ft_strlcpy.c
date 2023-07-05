@@ -6,13 +6,13 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:03:49 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/05 11:56:51 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/05 19:42:47 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcopy(char *dst, const char *src, size_t len)
+size_t	ft_strlcpy(char *dst, const char *src, size_t len)
 {
 	size_t	a;
 

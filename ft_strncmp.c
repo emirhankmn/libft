@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 19:49:11 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/05 20:00:23 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/05 19:49:19 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/05 19:49:20 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	s_len;
+	unsigned int	i;
 
-	s_len = ft_strlen(str);
-	while(s_len >= 0)
-	{
-		if(*str == (char)c)
-			return((char *)str);
-		str++;
-		s_len--;
-	}
-	return(NULL);
+	if (n == 0)
+		return(0);
+	i = 0;
+	while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i] && i < n - 1)
+		i++;
+	return(s1[i] - s2[i]);
 }
 
-int main()
+/* int	main()
 {
-	const char a[] = "Denizde";
+	const char a[] = "gozler";
+	const char b[] = "yalan";
 
-	printf("%s", ft_strchr(a, 'n'));
-} 
+	printf("%d", ft_strncmp(a, b, 3));
+} */

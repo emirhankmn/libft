@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 19:49:11 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/05 20:00:23 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/05 17:22:21 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/05 17:50:43 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	s_len;
 
-	s_len = ft_strlen(str);
+	s_len = ft_strlen(s);
 	while(s_len >= 0)
 	{
-		if(*str == (char)c)
-			return((char *)str);
-		str++;
+		if(s[s_len] == (char)c)
+			return((char *)(s + s_len));
 		s_len--;
 	}
-	return(NULL);
+	return(0);
 }
 
-int main()
+/* int main()
 {
-	const char a[] = "Denizde";
+	const char a[] = "Deninde";
 
-	printf("%s", ft_strchr(a, 'n'));
-} 
+	printf("%s", ft_strrchr(a, 'n'));
+} */

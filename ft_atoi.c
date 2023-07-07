@@ -4,7 +4,7 @@ int	ft_atoi(const char *s)
 {
 	int i;
 	int	sign;
-	int	rev;
+	long int	rev;
 
 	
 	if (!s)
@@ -23,6 +23,10 @@ int	ft_atoi(const char *s)
 	while(s[i] >= '0' && s[i] <= '9')
 	{
 		rev = (rev * 10) + (s[i] - '0');
+		if (rev > 2147483647)
+			return(0);
+		if (rev < -2147483648)
+			return(0);
 		i++;
 	}
 	return(rev * sign);
@@ -30,7 +34,7 @@ int	ft_atoi(const char *s)
 
 int	main()
 {
-	char	a[] = " 	 	-8724583725628736428";
+	char	a[] = " 	 	74523762364565";
 
 	printf("%d", ft_atoi(a));
 

@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:54:36 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/04 16:24:03 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/07 10:45:44 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int ft_isalpha(int c)
         return (1);
     return (0);
 }
-/*
-int main ()
+
+/* int main ()
 {
     char a = 't';
 
     printf("%d", ft_isalpha(a));
-}
+} */

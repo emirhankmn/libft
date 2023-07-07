@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:03:32 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/04 18:47:09 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/07 11:40:16 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	else if	(dst > src)
 	{
 		while (len--)
-			*((unsigned char *)(dst + len)) = *((unsigned char *)(src + len));
+			(*((unsigned char *)(dst + len))) = (*((unsigned char *)(src + len)));
 	}
 	return(dst);
 }
@@ -32,4 +32,4 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	b[] = "kesmek";
 
 	printf("%s", ft_memmove(a, b, 4));
-} */
+  } */

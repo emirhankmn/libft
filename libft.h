@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/07 20:04:00 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/07 20:04:13 by eakman           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef	LIBFT_H
 # define	LIBFT_H
 
@@ -21,7 +33,6 @@ void	ft_bzero(void *s, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t len);
-void	ft_bzero(void *s, size_t n);
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t len);

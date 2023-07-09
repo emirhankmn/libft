@@ -1,48 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 20:03:29 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/09 14:03:38 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/09 16:24:31 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/09 17:58:14 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int	sign;
-	long int	rev;
+	char	*str;
+	size_t	a;
+	size_t	b;
 
-	if (!s)
-		return(0);
-	i = 0;
-	while((s[i] >= 9 && s[i] <= 13) || s[i] == ' ')
-		i++;
-	
-	if(s[i] == '-')
-		sign = -1;
-	else if(s[i] == '+')
-		sign = 1;
-	i++;
-
-	rev = 0;
-	while(s[i] >= '0' && s[i] <= '9')
+	if (!s1 || !s2)
+		return (NULL);
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	a = 0;
+	b = 0;
+	if (!str)
+		return (NULL);
+	while (s1[a])
 	{
-		rev = (rev * 10) + (s[i] - '0');
-		i++;
+		str[a] = s1[a];
+		a++;
 	}
-	return(rev * sign);
+	while (s2[b])
+		str[a++] = s2[b++];
+	str[a] = '\0';
+	return (str);
 }
 
 /* int	main()
 {
-	char	a[] = " 	 	745565646345345";
+	char	a[] = "haftaya";
+	char	b[] = "pushswap";
 
-	printf("%d", ft_atoi(a));
-
+	printf ("%s", ft_strjoin(a, b));
 } */

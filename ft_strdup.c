@@ -1,48 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 20:03:29 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/09 14:03:38 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/09 11:17:15 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/09 11:17:18 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+char	*ft_strdup(const char *str)
 {
-	int i;
-	int	sign;
-	long int	rev;
+	char	*dst;
+	size_t	len;
 
-	if (!s)
-		return(0);
-	i = 0;
-	while((s[i] >= 9 && s[i] <= 13) || s[i] == ' ')
-		i++;
-	
-	if(s[i] == '-')
-		sign = -1;
-	else if(s[i] == '+')
-		sign = 1;
-	i++;
-
-	rev = 0;
-	while(s[i] >= '0' && s[i] <= '9')
-	{
-		rev = (rev * 10) + (s[i] - '0');
-		i++;
-	}
-	return(rev * sign);
+	len = ft_strlen(str);
+	dst = (char *)malloc(len + 1);
+	if ((dst) == NULL)
+		return(NULL);
+	ft_memcpy(dst, str, len + 1);
+	return(dst);
 }
-
-/* int	main()
-{
-	char	a[] = " 	 	745565646345345";
-
-	printf("%d", ft_atoi(a));
-
-} */

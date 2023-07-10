@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -16,9 +17,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return(ft_substr(s1, i, (j - i)));
 }
 
-/* int	main()
+int	main()
 {
 	char	a[] = "aaaahavadabulutaaa";
 
 	printf("%s", ft_strtrim(a, "a"));
-} */
+}

@@ -24,7 +24,7 @@ char	*ft_splitdup(const char *s, size_t start, size_t finish)
 {
 	char	*dest;
 	size_t	i;
-
+i
 	i = 0;
 	dest = (char *)malloc(sizeof(char) * (finish - start + 1));
 	if (!dest)

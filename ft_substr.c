@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 11:17:42 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/09 16:19:55 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/10 10:36:45 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 	{
 		if((ft_strlen(s) - start) < len)
-			len = ft_strelen(s) - start;
+			len = ft_strlen(s) - start;
 		str = (char *)malloc((sizeof(char)* len) + 1);
 		if(!str)
 			return(NULL);

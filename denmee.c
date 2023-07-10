@@ -5,36 +5,79 @@
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+size_t	ft_counter(const char *s, char c)
 {
-	char	*str;
-	char	*src;
+	size_t	count;
 
-	src = (char *)s;
-	if (!src)
-		return (NULL);
-	if (start >= ft_strlen(s))
+	count = 0;
+	while(*s == c && *s)
+		s++;
+	while (*s)
 	{
-		str = (char *)malloc(sizeof(char));
-		if (!str)
-			return (NULL);
-		*str = '\0';
+		while(*s && *s != c)
+			s++;
+		while(*s && *s == c)
+			s++;
+		count++;
 	}
-	else
-	{
-		if ((ft_strlen(s) - start) < len)
-			len = ft_strlen(s) - start;
-		str = (char *)malloc((sizeof(char) * len) + 1);
-		if (!str)
-			return (NULL);
-		ft_strlcpy(str, (char *)(s + start), len + 1);
-	}
-	return (str);
+	return(count);
 }
 
-int	main()
+char	*ft_splitdup(const char *s, size_t start, size_t finish)
 {
-	char	a[] = "kaniberkali";
+	char	*dst;
+	size_t	i;
 
-	printf("%s", ft_substr(a, 3, 2));
+	i = 0;
+	dst = (char *)malloc(sizeof(char) * finish - start + 1);
+	if(!dst)
+		return(NULL);
+	while(start < finish)
+	{
+		dst[i] = s[start];
+		i++;
+		start++;
+	}
+	dst[i] = '\0';
+	return(dst);
+}
+
+char	**ft_fill_split(char **dst, const char *s, char c)
+{
+	size_t	i;
+	size_t	p1;
+	size_t	start;
+
+	i = 0;
+	p1 = 0;
+	start = 0;
+	while(s[i])
+	{
+		while(s[i] != c && s[i])
+		{
+			i++;
+			if(s[i] == c || i == ft_strlen(s))
+				dst[p1++] = ft_splitdup(s, start, i);
+		}
+		while(s[i == c && s[i]])
+		{
+			i++;
+			start = i;
+		}
+	}
+	dst[p1] = NULL;
+	return(dst);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char **dst;
+
+	if(!s)
+		return(NULL);
+	dst = (char **)malloc(sizeof(char *) * ft_counter(s, c) + 1);
+	if(!dst)
+		return(NULL);
+	ft_fill_split(dst, s, c);
+	return(dst);
 }

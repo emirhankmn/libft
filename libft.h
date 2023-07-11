@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:04:00 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/11 14:55:31 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/11 17:55:34 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t len);
 void	*ft_calloc(size_t n, size_t len);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_putendl_fd(char *s, int fd);
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t len);

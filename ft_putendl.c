@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 17:19:17 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/11 17:37:48 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/11 17:54:33 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/11 17:59:49 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h> */
 #include "libft.h"
+/* #include <fcntl.h>
+#include <unistd.h> */
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
+	ft_putstr_fd(s. fd);
+	write(fd, "\n", 1);
 }
-
-
-/* int main()
+/*int main()
 {
-	int fd;
-	
-	fd = open("evo.txt", O_CREAT | O_RDWR);
-	printf("%d", fd);
-	ft_putchar_fd('a', fd);
-} */
+	int x = open("test.txt", 1);
+	printf("%d",x);
+	ft_putendl_fd("martin", x);
+}*/

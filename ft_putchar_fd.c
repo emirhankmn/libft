@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 17:54:46 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/11 11:43:18 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/11 17:19:17 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/11 17:27:16 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fcntl.h>
+#include <unistd.h>
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if	(c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	write(fd, &c, 1);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	int fd;
+	
+	fd = open("evo.txt", O_CREAT | O_RDWR);
+	printf("%d", fd);
+	ft_putchar_fd('a', fd);
 }

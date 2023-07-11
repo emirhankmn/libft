@@ -1,37 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 17:19:31 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/11 17:19:33 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/11 17:19:09 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/11 17:19:10 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	j;
+	unsigned int	i;
+	char	*str;
 
-	if (!s1 || !set)
+	if(!s || !f)
 		return(NULL);
 	i = 0;
-	while (ft_strchr(set, s1[i]) && s1[i] != '\0')
+	str = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if(!str)
+		return(NULL);
+	while(s[i])
+	{
+		str[i] = f(i, s[i]);
 		i++;
-	j = ft_strlen((char *)s1);
-	while(ft_strchr(set, s1[j]) && s1[i] != '\0')
-		j--;
-	return(ft_substr(s1, i, (j - i)));
+	}
+	return(str);
+}
+
+/* char	ft_ft(unsigned int a, char b)
+{
+	return(ft_toupper(b));
 }
 
 int	main()
 {
-	char	a[] = "aaaahavadabulutaaa";
+	char	a[] = "Oyun Degil Ki Yasamak";
 
-	printf("%s", ft_strtrim(a, "a"));
-}
+	char *str = ft_strmapi(a, ft_ft);
+	printf("%s", str);
+}  */

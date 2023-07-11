@@ -1,20 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 17:54:46 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/11 11:43:18 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/11 17:19:12 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/11 17:19:14 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if	(c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	unsigned int	i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
+
+/* void	ft_ft(unsigned int a, char *b)
+{
+	*b = ft_toupper(*b);
+}
+
+#include <stdio.h>
+
+int	main()
+{
+	char	a[] = "Oyun DegilKi Yasamak";
+
+	ft_striteri(a, ft_ft);
+	printf("%s", a);
+} */

@@ -6,40 +6,41 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:03:29 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/12 13:10:23 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 17:55:39 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *s)
+int	ft_atoi(const char *str)
 {
-	int			i;
-	int			sign;
-	long int	rev;
+	int	result;
+	int	sign;
+	int	i;
 
-	if (!s)
-		return (0);
 	i = 0;
-	while ((s[i] >= 9 && s[i] <= 13) || s[i] == ' ')
-		i++;
-	if (s[i] == '-')
-		sign = -1;
-	else if (s[i] == '+')
-		sign = 1;
+	sign = 1;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 	i++;
-	rev = 0;
-	while (s[i] >= '0' && s[i] <= '9')
+	if (str[i] == '-')
+		sign = -1;
+	if (str[i] == '-' || str[i] == '+')
+	i++;
+	if (!(ft_isdigit(str[i])))
+		return (0);
+	while (ft_isdigit(str[i]))
 	{
-		rev = (rev * 10) + (s[i] - '0');
+		result *= 10;
+		result += str[i] - 48;
 		i++;
 	}
-	return (rev * sign);
+	return (result * sign);
 }
 
 /* int	main()
 {
-	char	a[] = " 	 	745565646345345";
+	char	a[] = "546:5";
 
 	printf("%d", ft_atoi(a));
 

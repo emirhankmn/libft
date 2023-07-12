@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 11:17:15 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/09 11:17:18 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 14:14:31 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *str)
 	len = ft_strlen(str);
 	dst = (char *)malloc(len + 1);
 	if ((dst) == NULL)
-		return(NULL);
+		return (NULL);
 	ft_memcpy(dst, str, len + 1);
-	return(dst);
+	return (dst);
 }

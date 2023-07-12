@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:19:05 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/11 17:39:00 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 15:05:19 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 /* #include <fcntl.h>
 #include <unistd.h> */
 
-
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
-		return ;
+		write(fd, "(NULL)", 6);
 	write(fd, s, ft_strlen(s));
 }
 

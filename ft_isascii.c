@@ -6,15 +6,15 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:54:41 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/04 16:24:03 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 13:13:41 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if(c >= 0 && c <= 127)
-        return(1);
-    return(0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

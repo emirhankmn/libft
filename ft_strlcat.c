@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:03:45 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/05 12:32:54 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 14:25:53 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t len)
 	b = ft_strlen(src);
 	i = 0;
 	if (len == 0)
-		return(a);
+		return (a);
 	if (len <= a)
-		return(len + b);
+		return (len + b);
 	if (len > 0)
 	{
-		while(i < b && i + a < len - 1)
+		while (i < b && i + a < len - 1)
 		{
 			dst[a + i] = src[i];
 			i++;
 		}
 		dst[a + 1] = '\0';
 	}
-	return( a + b );
+	return (a + b);
 }
 
 /* int main()

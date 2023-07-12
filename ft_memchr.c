@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 19:48:50 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/07 10:43:48 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 13:18:13 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	*ft_memchr(const void *s, int c, size_t len)
 	size_t	i;
 
 	i = 0;
-	while(i < len)
+	while (i < len)
 	{
-		if(((unsigned char *)s)[i] == (unsigned char)c)
-			return((void *)(s + i));
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return ((void *)(s + i));
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
 /* int	main(void)

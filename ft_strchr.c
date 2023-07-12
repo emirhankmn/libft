@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 19:49:11 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/09 13:14:22 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 14:13:57 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ char	*ft_strchr(const char *s, int c)
 	int	s_len;
 
 	s_len = ft_strlen(s);
-	while(s_len >= 0)
+	while (s_len >= 0)
 	{
-		if(*s == (char)c)
-			return((char *)s);
+		if (*s == (char)c)
+			return ((char *)s);
 		s++;
 		s_len--;
 	}
-	return(NULL);
+	return (NULL);
 }
 
 /* int main()

@@ -6,11 +6,9 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:19:52 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/11 17:31:21 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 15:02:40 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 
@@ -36,7 +34,7 @@ char	*ft_splitdup(const char *s, size_t start, size_t finish)
 {
 	char	*dest;
 	size_t	i;
-i
+
 	i = 0;
 	dest = (char *)malloc(sizeof(char) * (finish - start + 1));
 	if (!dest)
@@ -46,7 +44,7 @@ i
 		dest[i] = s[start];
 		i++;
 		start++;
-	} 
+	}
 	dest[i] = '\0';
 	return (dest);
 }

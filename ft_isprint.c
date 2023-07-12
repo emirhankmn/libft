@@ -6,15 +6,15 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:14:32 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/07 10:02:15 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 14:42:10 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-		return(1);
-	return(0);
+		return (1);
+	return (0);
 }

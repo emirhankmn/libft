@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:38:28 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/05 14:19:04 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 14:31:59 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return(c - 32);
-	return(c);
+		return (c - 32);
+	return (c);
 }
 
 /* int	main()

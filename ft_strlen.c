@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:14:23 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/04 16:26:59 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 14:26:44 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		i++;
 	}
-	return(i);
+	return (i);
 }

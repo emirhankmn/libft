@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 17:19:17 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/11 17:37:48 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 13:28:09 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-
 
 /* int main()
 {

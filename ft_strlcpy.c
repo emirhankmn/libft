@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:03:49 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/09 16:58:31 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 14:26:22 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t len)
 	a = 0;
 	if (len > 0)
 	{
-		while(src[a] && a < len)
+		while (src[a] && a < len)
 		{
 			dst[a] = src[a];
 			a++;
 		}
 		dst[a] = '\0';
 	}
-	return(ft_strlen(dst));
-	
+	return (ft_strlen(dst));
 }
 
 /* int	main()

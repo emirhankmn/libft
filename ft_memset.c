@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 13:33:31 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/05 20:23:33 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/12 13:27:43 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t	i;
 
 	i = 0;
-	while(i < len)
+	while (i < len)
 	{
 		((unsigned char *)b)[i] = c;
 		i++;
 	}
-	return(b);
+	return (b);
 }
 
 /* int main()

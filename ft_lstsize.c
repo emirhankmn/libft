@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/16 15:18:52 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/16 20:30:24 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/16 21:02:39 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/16 21:25:30 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*new_list;
+	int	i;
 
-	new_list = malloc(sizeof(t_list));
-	if (!new_list)
-		return (NULL);
-	new_list->content = content;
-	new_list->next = NULL;
-	return (new_list);
+	i = 0;
+	while(lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return(i);
 }
 
-/* int main()
+/* #include <stdio.h>
+
+int	main()
 {
-	char	a[] = "bebegim";
-	t_list *b = ft_lstnew(a);
-	
-	printf("%s", b->content);
-	return(0); 
-} 
- */
+	t_list	*arg1;
+	t_list	*arg2;
+	t_list	*arg3;
+	arg1 = ft_lstnew("caresiz");
+	arg2 = malloc(sizeof(t_list));
+	arg3 = malloc(sizeof(t_list));
+	arg1->next = arg2;
+	arg2->next = arg3;
+
+	printf("%d\n", ft_lstsize(arg1));
+} */

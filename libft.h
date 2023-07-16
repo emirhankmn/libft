@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:04:00 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/16 15:15:39 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/16 20:33:44 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ void		*ft_memcpy(void *dst, const void *src, size_t len);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 
-size_t		ft_strlen(const char *s);
-size_t		ft_strlcpy(char *dst, const char *src, size_t len);
-size_t		ft_strlcat(char *dst, const char *src, size_t len);
-size_t		ft_strlcopy(char *dst, const char *src, size_t len);
-
 char		*ft_itoa(int n);
 char		*ft_strdup(const char *str);
 char		*ft_strchr(const char *s, int c);
@@ -57,6 +52,11 @@ char		*ft_strnstr(const char *s1, const char *s2, size_t len);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 
+size_t		ft_strlen(const char *s);
+size_t		ft_strlcpy(char *dst, const char *src, size_t len);
+size_t		ft_strlcat(char *dst, const char *src, size_t len);
+size_t		ft_strlcopy(char *dst, const char *src, size_t len);
+
 typedef struct s_list
 {
 	void			*content;
@@ -64,5 +64,7 @@ typedef struct s_list
 }					t_list;
 
 t_list		*ft_lstnew(void *content);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+int			ft_lstsize(t_list *lst);
 
 #endif

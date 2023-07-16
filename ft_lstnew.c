@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/05 19:49:19 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/16 14:06:14 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/16 15:18:52 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/16 15:46:14 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*new_list;
 
-	i = 0;
-	while (i < len && (s1[i] || s2[i]))
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char )s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
+	new_list = malloc(sizeof(t_list));
+	if (!new_list)
+		return (NULL);
+	new_list->content = content;
+	new_list->next = NULL;
+	return (new_list);
 }
 
-/* int	main()
+/* int main()
 {
-	const char a[] = "gozler";
-	const char b[] = "yalan";
-
-	printf("%d", ft_strncmp(a, b, 3));
-} */
+	char	a[] = "bebegim";
+	t_list *b = ft_lstnew(a);
+	
+	char	*d = (char *)b -> content;
+	printf("%s", d);
+	return(0);
+}  */

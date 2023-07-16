@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:03:48 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/12 14:29:11 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/16 17:11:51 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	if (len == 0)
 		return (NULL);
 	i = 0;
-	while (i <= (len - s2_len) && s1[i])
+	while (i <= (len - s2_len) && s1[i] != '\0')
 	{
+		if (len < s2_len)
+			return (NULL);
 		if (ft_strncmp(&s1[i], s2, s2_len) == 0)
 			return ((char *) &s1[i]);
 		i++;
@@ -35,7 +37,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 /* int  main()
 {
 	char	a[] = "Yere Dusen Aynalar Gibiyiz";
-	char	b[] = "Ayna";
+	char	b[] = "\0";
 
-	printf("%s", ft_strnstr(a, b, 20));
+	printf("%s", ft_strnstr(b, a, 20));
 } */

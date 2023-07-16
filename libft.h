@@ -6,17 +6,17 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:04:00 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/12 15:22:42 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/16 15:15:39 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define    LIBFT_H
+# define LIBFT_H
 
-# include   <stdio.h>
-# include   <unistd.h>
-# include   <stdlib.h>
-# include   <string.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
 
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
@@ -56,5 +56,13 @@ char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_strnstr(const char *s1, const char *s2, size_t len);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+t_list		*ft_lstnew(void *content);
 
 #endif

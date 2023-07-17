@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/09 11:17:15 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/17 17:19:04 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/17 12:17:54 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/17 12:26:15 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*dst;
-	size_t	len;
-
-	len = ft_strlen(str);
-	dst = (char *)malloc(len + 1);
-	if ((dst) == NULL)
-		return (NULL);
-	ft_memcpy(dst, str, len + 1);
-	return (dst);
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
+
+/* int	main()
+{
+	t_list	*lst;
+	t_list	*lst1;
+	t_list	*lst2;
+	t_list	*res;
+
+	lst = ft_lstnew("hem zaten hayatta");
+	lst1 = ft_lstnew("ciddi bir espri");
+	lst2 = ft_lstnew("seneler geçtikçe kalmiyor değeri");	
+	lst->next = lst1;
+	lst1->next = lst2;
+	res = ft_lstlast(lst);
+	printf("%s", res->content);
+} */

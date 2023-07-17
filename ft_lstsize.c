@@ -6,7 +6,7 @@
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 21:02:39 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/16 21:25:30 by eakman           ###   ########.fr       */
+/*   Updated: 2023/07/17 12:17:25 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	ft_lstsize(t_list *lst)
 	int	i;
 
 	i = 0;
-	while(lst)
+	while (lst)
 	{
 		i++;
 		lst = lst->next;
 	}
-	return(i);
+	return (i);
 }
 
 /* #include <stdio.h>

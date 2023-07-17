@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eakman <eakman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/09 11:17:15 by eakman            #+#    #+#             */
-/*   Updated: 2023/07/17 17:19:04 by eakman           ###   ########.fr       */
+/*   Created: 2023/07/17 14:32:14 by eakman            #+#    #+#             */
+/*   Updated: 2023/07/17 15:28:52 by eakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	*dst;
-	size_t	len;
-
-	len = ft_strlen(str);
-	dst = (char *)malloc(len + 1);
-	if ((dst) == NULL)
-		return (NULL);
-	ft_memcpy(dst, str, len + 1);
-	return (dst);
+	if (!lst)
+		return ;
+	(*del)(lst->content);
+	free (lst);
 }
+
+/* void	del(void *content)
+{
+	free(content);
+}
+
+int	main()
+{
+	t_list	*lst; 
+	
+	lst = ft_lstnew("ya biz böyle yakalarlarsa");
+	printf("%s\n", (char *)lst->content);
+	ft_lstdelone(lst, del);
+	printf("%s", (char *)lst->content);
+} */
